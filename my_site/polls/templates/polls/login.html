@@ -1,0 +1,27 @@
+<!-- templates/login.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <!-- Configuracion de la ruta para llamar archivos estaticos. -->
+    {% load static %} <!--Carga la etiqueta static de django que permite referenciar archivos estaticos-->
+    <link rel="stylesheet" href="{% static 'polls/formulario.css' %}">
+</head>
+<body>
+    {% if messages %}
+    <ul class="messages">
+        { % for message in messages % }
+        <li>{{ message }}</li>
+        { % endfor % }
+    </ul>
+    {% endif %}
+    
+    <h1>Formulario para Login</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }} <!--Renderizar el formulario que uso en mi vista-->
+        <button type="submit">Ingresar</button>
+    </form>
+</body>
+</html>

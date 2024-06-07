@@ -34,7 +34,7 @@ ALLOWED_HOSTS = []
 #Una app se llama desde la referencia de su
 #clase configuracion
 #'nombre_aplicacion.archivo_apps_nombre_clase'
-INSTALLED_APPS = [
+INSTALLED_APPS = ['blog.apps.BlogConfig',
                   'polls.apps.PollsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
